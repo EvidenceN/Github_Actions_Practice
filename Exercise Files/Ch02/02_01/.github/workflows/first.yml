@@ -1,4 +1,22 @@
 name: first
 
+# Check notes on "ON" keyword in notes.md
+
 on: push
 
+jobs:
+  job1:
+  #  name: first job - Experimenting with not being explicit with "name" keyword
+    runs-on: ubuntu-latest
+    steps:
+      - name: job 1 step one
+# Check note on ACTIONS in notes.md
+      - uses: 
+      - name: Job 1 step two
+
+  job2: 
+    name: second job
+    runs-on: windows-latest
+    steps:
+      - name: job 2 step one
+      - name: Job 2 step two
