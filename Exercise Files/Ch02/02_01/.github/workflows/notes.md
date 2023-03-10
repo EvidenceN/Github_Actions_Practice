@@ -45,3 +45,15 @@ Actions can be sources from 3 different locations
     - uses: docker://{iamge}:{tag}
     - uses: docker://hellow-world:latest
 
+## **RUN KEYWORD COMMAND**
+
+- specify a command using "RUN Attribute" that will execute in the default shell system.
+- For Ubuntu and MacOS systems, Default is BASH and POWERSHELL for windows systems.
+- To run a command: RUN followed by the command, parameters, and arguments to execute. Example
+    - Single like command
+        - run: {command} {parameters} {arguments}
+        - run: mv ./output ./archive (move command followed by the files/directories to move)
+    - Multiline Command
+        - run: |<br>
+            Command 1 <br>
+            Command 2
