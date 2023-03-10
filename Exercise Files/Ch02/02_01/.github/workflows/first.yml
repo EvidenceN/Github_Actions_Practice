@@ -1,4 +1,27 @@
 name: first
 
+# Check notes on "ON" keyword in notes.md
+
 on: push
 
+jobs:
+  job1:
+  #  name: first job - Experimenting with not being explicit with "name" keyword
+    runs-on: ubuntu-latest
+    steps:
+      - name: job 1 step one
+        # Check note on ACTIONS in notes.md. Syntax - Github account that contains the actions to use {actions}, then the name of the action we want to use{checkout} and the tag {@V2}
+        uses: actions/checkout@v2
+      - name: Job 1 step two
+        uses: actions/checkout@v2      
+        # Check notes in notes.md. Print the environment variable for the shell running the command, then pipe to sort so that the result is in alphabetical order
+        run: env | sort
+  job2: 
+    name: second job
+    runs-on: windows-latest
+    steps:
+      - name: job 2 step one
+        uses: actions/checkout@v2
+      - name: Job 2 step two
+          # use powershell syntax to print environment variables. Enclose in quotes because it has commands that might be interpreted as part of the workflow (Example = Env:)
+        run: "Get-ChildItem Env: | Sort-Object Name"
